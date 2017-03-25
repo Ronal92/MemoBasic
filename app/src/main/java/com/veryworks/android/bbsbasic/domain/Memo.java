@@ -11,26 +11,21 @@ import java.util.Date;
 
 @DatabaseTable(tableName = "memo")
 public class Memo {
-
     @DatabaseField(generatedId = true)
     int id;
-
     @DatabaseField
     String memo;
-
     @DatabaseField
     Date date;
 
     public Memo(){
         // default
     }
-
     // create 시에 사용할 생성자
     public Memo(String memo, Date date){
         this.memo = memo;
         this.date = date;
     }
-
     public int getId() {
         return id;
     }

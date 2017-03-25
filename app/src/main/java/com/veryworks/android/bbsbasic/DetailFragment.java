@@ -17,9 +17,9 @@ import java.sql.SQLException;
 import java.util.Date;
 
 public class DetailFragment extends Fragment implements View.OnClickListener{
+
     Context context = null;
     DetailInterface detailInterface = null;
-    int position = -1;
 
     View view = null;
 
@@ -73,6 +73,7 @@ public class DetailFragment extends Fragment implements View.OnClickListener{
                     memo.setDate(new Date(System.currentTimeMillis()));
 
                     detailInterface.saveToList(memo);
+
                 }catch (SQLException e){
                     e.printStackTrace();
                 }

@@ -18,12 +18,11 @@ import java.sql.SQLException;
 public class DBHelper extends OrmLiteSqliteOpenHelper {
 
     public static final String DB_NAME = "memo.db";
-    public static final int DB_VERSION = 1;
+    public static final int DB_VERSION = 2;
 
     public DBHelper(Context context){
         super(context, DB_NAME, null, DB_VERSION);
     }
-
     @Override
     public void onCreate(SQLiteDatabase database, ConnectionSource connectionSource) {
         try {
@@ -32,7 +31,6 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
             e.printStackTrace();
         }
     }
-
     @Override
     public void onUpgrade(SQLiteDatabase database, ConnectionSource connectionSource, int oldVersion, int newVersion) {
         try {
@@ -42,7 +40,6 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
             e.printStackTrace();
         }
     }
-
     // DBHelper 를 싱글턴으로 사용하기 때문에 dao 객체도 열어놓고 사용가능하다
     private Dao<Memo, Integer> memoDao = null;
     public Dao<Memo, Integer> getMemoDao() throws SQLException {

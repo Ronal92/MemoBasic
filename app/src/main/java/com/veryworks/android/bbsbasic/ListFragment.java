@@ -44,6 +44,12 @@ public class ListFragment extends Fragment implements View.OnClickListener{
     }
 
     @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.context = context;
+        this.listInterface = (ListInterface) context;
+    }
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -82,12 +88,7 @@ public class ListFragment extends Fragment implements View.OnClickListener{
         super.onResume();
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        this.context = context;
-        this.listInterface = (ListInterface) context;
-    }
+
 
     @Override
     public void onDetach() {
